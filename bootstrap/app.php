@@ -22,9 +22,6 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->api(prepend: [
             \Illuminate\Http\Middleware\HandleCors::class,
         ]);
-
-        // Sanctum: domicilios stateful (para desarrollo local)
-        $middleware->statefulApi();
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         // Todas las rutas /api/* siempre responden en JSON
